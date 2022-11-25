@@ -1,0 +1,10 @@
+mat-slider,
+.dialog-content {
+    width: 450px;
+}
+
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}

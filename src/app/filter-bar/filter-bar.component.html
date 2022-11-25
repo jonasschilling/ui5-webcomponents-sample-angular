@@ -1,0 +1,45 @@
+<mat-accordion>
+    <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Filter
+            </mat-panel-title>
+            <mat-panel-description>
+                <p *ngIf="!monthlyRentFilter && !moveInDateFilter && !postalCodeCityFilter && !perimeterFilter">Keine Filter gesetzt.</p>
+
+                <p *ngIf="monthlyRentFilter">Miete: {{ monthlyRentFilter }} €/Monat</p>
+
+                <p *ngIf="moveInDateFilter">&nbsp;|&nbsp;</p>
+                <p *ngIf="moveInDateFilter">Einzugsdatum: {{ moveInDateFilter }}</p>
+
+                <p *ngIf="postalCodeCityFilter">&nbsp;|&nbsp;</p>
+                <p *ngIf="postalCodeCityFilter">Ort: {{ postalCodeCityFilter }}</p>
+
+                <p *ngIf="perimeterFilter">&nbsp;|&nbsp;</p>
+                <p *ngIf="perimeterFilter">Umkreis: {{ perimeterFilter }}</p>
+
+                <button style="position: absolute; right: 0; width: 20px; margin-top: 0;" class="filter" mat-flat-button color="primary" aria-label="Miete (monatlich)">
+                    <mat-icon>filter_list</mat-icon>
+                </button>
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div class="filter-expand">
+            <button class="filter" mat-flat-button color="primary" aria-label="Miete (monatlich)" (click)="openRentFilterDialog()">
+                <mat-icon>euro_symbol</mat-icon>
+                <p class="filter-label">{{ monthlyRentFilter === undefined ? filterNotSet : monthlyRentFilter + ' €/Monat' }}</p>
+            </button>
+            <button class="filter" mat-flat-button color="primary" aria-label="Einzugsdatum" (click)="openDateFilterDialog()">
+                <mat-icon>calendar_today</mat-icon>
+                <p class="filter-label">{{ moveInDateFilter === undefined ? filterNotSet : moveInDateFilter }}</p>
+            </button>
+            <button class="filter" mat-flat-button color="primary" aria-label="Ort" (click)="openCityFilterDialog()">
+                <mat-icon>location_city</mat-icon>
+                <p class="filter-label">{{ postalCodeCityFilter === undefined ? filterNotSet : postalCodeCityFilter }}</p>
+            </button>
+            <button class="filter" mat-flat-button color="primary" aria-label="Umkreis" (click)="openPerimeterFilterDialog()">
+                <mat-icon>location_searching</mat-icon>
+                <p class="filter-label">{{ perimeterFilter === undefined ? filterNotSet : perimeterFilter }}</p>
+            </button>
+        </div>
+    </mat-expansion-panel>
+</mat-accordion>

@@ -1,0 +1,7 @@
+---
+applications:
+  - name: shapp-ui
+    instances: 1
+    memory: 512M
+    buildpack: staticfile_buildpack
+    path: ./dist/shapp-ui

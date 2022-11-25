@@ -1,0 +1,16 @@
+.mat-mdc-form-field+.mat-mdc-form-field {
+    margin-left: 8px;
+}
+
+.filter-expand {
+    text-align: center;
+}
+
+.filter-label {
+    margin: 0;
+}
+
+.filter {
+    width: 22%;
+    margin: 8px;
+}
